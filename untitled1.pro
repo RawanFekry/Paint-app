@@ -12,14 +12,20 @@ SOURCES += \
     Rectangle.cpp \
     Scene.cpp \
     Shape.cpp \
+    circle.cpp \
+    line.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    triangle.cpp
 
 HEADERS += \
     Rectangle.h \
     Scene.h \
     Shape.h \
-    mainwindow.h
+    circle.h \
+    line.h \
+    mainwindow.h \
+    triangle.h
 
 FORMS += \
     mainwindow.ui

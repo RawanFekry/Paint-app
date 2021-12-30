@@ -30,7 +30,7 @@ void newscene::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
     if  ((event->buttons() & Qt::LeftButton) && pressing){
         width = event->scenePos().rx()- x;
         hieght = event->scenePos().ry() - y;
-        shape->setParameters(width,hieght);
+        shape->setParemeters(width,hieght);
         this->update();
 
         }
