@@ -6,13 +6,15 @@
 class Rectangle:public Shape{
 
 private:
-int parameter1,parameter2;    //parameter1=width        parameter2 =hieght
+int width, hieght;
 
 public:
-    Rectangle(int x,int y,QColor color,int linewidth);
+    Rectangle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene);
     ~Rectangle();
-    void setParemeters(int parameter1,int parameter2)override;
-    float getperimeter(int parameter1,int parameter2)override;
+
+    void setParemeters(int x2,int y2)override;
+    float getperimeter()override;
+    void addShape() override;
 
 };
 

@@ -1,24 +1,30 @@
 #include "triangle.h"
 
-Triangle::Triangle(int x,int y,QColor color,int linewidth):
-    Shape(x,y,color,linewidth)
+Triangle::Triangle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene):
+    Shape(x1,y1,color,linewidth, scene)
 {
-    polygon << QPointF(x, y) << QPointF(parameter1, parameter2) << QPointF(x-(parameter1-x),parameter2);  //  paremeter1=x and parameter2=y
-    line= new QGraphicsLineItem(x,y,1,1);
-    line->setPen(pen);
+    polygon << QPointF(x1, y1) << QPointF(x1, y1) << QPointF(x1, y1);
+    triangle= new QGraphicsPolygonItem(polygon);
+    triangle->setPen(pen);
 }
 Triangle:: ~Triangle(){
 
 }
 
-void Triangle::setParemeters(int parameter1, int parameter2){
-    this->parameter1=parameter1;
-    this->parameter2=parameter2;
-    traingle->setPolygon(polygon);
+void Triangle::setParemeters(int x2, int y2){
+    length=pow((pow((x1-x2),2)+pow((y1-y2),2)),0.5);
+    polygon.clear();
+    polygon << QPointF(x1, y1) << QPointF(x1+.5*length, y2) << QPointF(x1-.5*length, y2);
+    triangle->setPolygon(polygon);
 }
-float Triangle:: getperimeter(int parameter1,int parameter2){
-    int lineLength;
-    lineLength=pow((pow((x-parameter1),2)+pow((y-parameter2),2)),0.5);
-    perimeter=3*lineLength;
+float Triangle:: getperimeter(){
+
+
+    perimeter=3*abs(length);
     return perimeter;
+}
+
+
+void Triangle::addShape(){
+scene->addItem(triangle);
 }

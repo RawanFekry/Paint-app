@@ -1,28 +1,28 @@
 
 #include<Rectangle.h>
 
+Rectangle::Rectangle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene ):
+    Shape(x1 ,y1 , color, linewidth, scene){
 
-
-
-
-Rectangle::Rectangle(int x,int y,QColor color,int linewidth ):
-    Shape(x,y,color,linewidth){
-
-rect=new QGraphicsRectItem(x,y,1,1);
+rect=new QGraphicsRectItem(x1,y1,1,1);
 rect->setPen(pen);
 }
 
 Rectangle::~Rectangle(){
 }
 
-void Rectangle::setParemeters(int parameter1, int parameter2){
-    this->parameter1=parameter1;
-    this->parameter2=parameter2;
-    rect->setRect(x,y,parameter1,parameter2);
+void Rectangle::setParemeters(int x2, int y2){
+    width = x2 - x1;
+    hieght = y2 - y1;
+    rect->setRect(x1, y1, width, hieght);
 }
 
-float Rectangle::getperimeter(int parameter1,int parameter2){
-    perimeter=2*(parameter1+parameter2);
+float Rectangle::getperimeter(){
+    perimeter=2*(abs(width)+abs(hieght));
   return perimeter;
 }
 
+
+void Rectangle::addShape(){
+scene->addItem(rect);
+}

@@ -1,8 +1,9 @@
 #include <Shape.h>
 
-Shape::Shape(int x,int y,QColor color,int linewidth){
-    this->x=x;
-    this->y=y;
+Shape::Shape(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene){
+    this->x1 = x1;
+    this->y1 = y1;
+    this->scene = scene;
   pen.setColor(color);
   pen.setWidth(linewidth);
 
@@ -13,8 +14,8 @@ Shape::~Shape(){
 }
 
 
-void Shape::setParemeters(int parameter1, int parameter2){}
-float Shape::getperimeter(int parameter1, int parameter2){}
+void Shape::setParemeters(int x2, int y2){}
+float Shape::getperimeter(){}
 
 
 void Shape::setname(QString name){
@@ -35,4 +36,9 @@ QString Shape:: getshapeType(){
 
 int Shape:: getlinewidth(){
     return this->linewidth;
+}
+
+void Shape::addShape()
+{
+
 }

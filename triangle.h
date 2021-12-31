@@ -8,12 +8,17 @@ class Triangle :public Shape
 {
 public:
 
-     QPolygonF polygon;
-    Triangle(int x,int y,QColor color,int linewidth);
+
+    Triangle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene);
     ~Triangle();
-     int parameter1,parameter2;
-    void setParemeters(int parameter1,int parameter2)override;
-    float getperimeter(int parameter1,int parameter2)override;
+
+    void setParemeters(int x2,int y2)override;
+    float getperimeter()override;
+    void addShape() override;
+
+private:
+    QPolygonF polygon;
+    int length;
 };
 
 #endif // TRIANGLE_H

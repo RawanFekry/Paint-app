@@ -10,16 +10,17 @@ class Shape
 {
 
 public:
-QGraphicsRectItem*rect;
-QGraphicsEllipseItem*circ;
-QGraphicsPolygonItem*traingle;
-QGraphicsLineItem*line;
+QGraphicsRectItem* rect;
+QGraphicsEllipseItem* circ;
+QGraphicsPolygonItem* triangle;
+QGraphicsLineItem* line;
 
-    Shape(int x,int y,QColor color,int linewidth);
+    Shape(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene);
     ~Shape();
 
-    virtual void setParemeters(int parameter1,int parameter2)=0;
-    virtual float getperimeter(int parameter1,int parameter2);
+    virtual void setParemeters(int x2,int y2);
+    virtual float getperimeter();
+    virtual void addShape();
     void setname(QString name);
     QString getname();
     QColor getcolor();
@@ -33,8 +34,9 @@ protected:
 float perimeter;
 QColor color;
 QString shapeType;
-int x,y,linewidth;
+int x1,y1,linewidth;
 QPen pen;
+QGraphicsScene* scene;
 
 };
 

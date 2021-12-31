@@ -8,7 +8,11 @@
 #include <QPainter>
 #include <QPen>
 #include <QColor>
-#include <Rectangle.h>
+#include "Rectangle.h"
+#include "circle.h"
+#include "line.h"
+#include "triangle.h"
+#include <iostream>
 
 
 
@@ -21,18 +25,17 @@ class newscene : public QGraphicsScene
 
 
 protected:
+     
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
 
 private:
 
-    int x, y, width,hieght;
+    int x1, y1, x2, y2;
     bool pressing = false;
-    QPointF intial, final;
-    QPolygonF polygon;
-    QGraphicsPolygonItem* p;
     Shape* shape;
+    int selectedShape;
 
 };
 

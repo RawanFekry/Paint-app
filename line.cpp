@@ -1,25 +1,33 @@
 #include "line.h"
 
-Line::Line(int x,int y,QColor color,int linewidth):
-    Shape(x,y,color,linewidth)
+Line::Line(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene):
+    Shape(x1, y1, color, linewidth, scene)
 {
-line= new QGraphicsLineItem(x,y,1,1);
+line= new QGraphicsLineItem(x1,y1,x1,y1);
 line->setPen(pen);
 }
 
-void Line:: setParemeters(int parameter1,int parameter2){
-
-     this->parameter1=parameter1;
-    this->parameter2=parameter2;
-
-    line->setLine(x,y,parameter1,parameter2);
+void Line:: setParemeters(int x2,int y2){
+    length = pow((pow((x1-x2),2)+pow((y1-y2),2)),0.5);
+    line->setLine(x1,y1,x2,y2);
 
 }
  Line:: ~Line(){
 
 }
 
-float Line:: getperimeter(int parameter1,int parameter2){
-  perimeter=pow((pow((x-parameter1),2)+pow((y-parameter2),2)),0.5);
+float Line::getperimeter(){
+    perimeter = length;
+
   return perimeter;
+}
+
+
+QGraphicsLineItem* Line::getShape()
+{
+    return line;
+}
+
+void Line::addShape(){
+scene->addItem(line);
 }

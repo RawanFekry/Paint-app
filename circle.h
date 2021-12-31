@@ -3,18 +3,19 @@
 #include<Shape.h>
 #include<QGraphicsScene>
 #include<QtMath>
-class circle: public Shape{
+class Circle: public Shape{
 
 
 private:
-int  parameter1,parameter2;
 int diameter;
 public:
-    circle(int x,int y,QColor color,int linewidth);
-    ~circle();
+    Circle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene);
+    ~Circle();
     protected:
-    void setParemeters(int parameter1,int parameter2 )override;
-    float getperimeter(int parameter1,int parameter2)override;
+    void setParemeters(int x2,int y2 )override;
+    float getperimeter()override;
+    void addShape() override;
+    QGraphicsEllipseItem* getShape();
 };
 
 #endif // CIRCLE_H

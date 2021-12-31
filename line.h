@@ -7,12 +7,13 @@
 class Line : public Shape{
 
 public:
-    Line(int x,int y,QColor color,int linewidth);
+    Line(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene);
     ~Line();
-    int parameter1,parameter2;
-    void setParemeters(int parameter1,int parameter2)override;
-    float getperimeter(int parameter1,int parameter2)override;
-
+    int length;
+    void setParemeters(int x2,int y2)override;
+    float getperimeter()override;
+    void addShape() override;
+    QGraphicsLineItem* getShape();
 };
 
 #endif // LINE_H
