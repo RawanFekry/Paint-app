@@ -1,13 +1,13 @@
 #include "Scene.h"
 #include <iostream>
+#include <QtDebug>
 
-
-newscene::newscene(QObject *parent):
+newscene::newscene(QObject *parent, QUndoStack* undoStack):
     QGraphicsScene(parent)
 {
 
-selectedShape = 3;
-
+    this->undoStack = undoStack;
+    selectedShape = 1;
 };
 
 void newscene::mousePressEvent(QGraphicsSceneMouseEvent *event){
@@ -30,7 +30,8 @@ void newscene::mousePressEvent(QGraphicsSceneMouseEvent *event){
         }
 
 
-        shape->addShape();
+        addItem = new addCommand(shape);
+        undoStack->push(addItem);
         pressing = true;
         this->update();
     }
@@ -58,3 +59,7 @@ void newscene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 }
 }
 
+ void newscene::selectShape(int shapeNum)
+ {
+     selectedShape = shapeNum;
+ }

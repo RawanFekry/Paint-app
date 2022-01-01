@@ -13,6 +13,7 @@ SOURCES += \
     Scene.cpp \
     Shape.cpp \
     circle.cpp \
+    commands.cpp \
     line.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     Scene.h \
     Shape.h \
     circle.h \
+    commands.h \
     line.h \
     mainwindow.h \
     triangle.h

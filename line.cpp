@@ -30,4 +30,13 @@ QGraphicsLineItem* Line::getShape()
 
 void Line::addShape(){
 scene->addItem(line);
+scene->update();
+
+}
+
+void Line::deleteShape()
+{
+    scene->removeItem(line);
+    scene->update();
+
 }

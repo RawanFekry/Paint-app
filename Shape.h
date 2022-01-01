@@ -21,6 +21,7 @@ QGraphicsLineItem* line;
     virtual void setParemeters(int x2,int y2);
     virtual float getperimeter();
     virtual void addShape();
+    virtual void deleteShape();
     void setname(QString name);
     QString getname();
     QColor getcolor();

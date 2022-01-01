@@ -25,4 +25,13 @@ float Rectangle::getperimeter(){
 
 void Rectangle::addShape(){
 scene->addItem(rect);
+scene->update();
+
+}
+
+void Rectangle::deleteShape()
+{
+    scene->removeItem(rect);
+    scene->update();
+
 }

@@ -13,7 +13,10 @@
 #include "line.h"
 #include "triangle.h"
 #include <iostream>
-
+#include <QAction>
+#include <QUndoStack>
+#include <commands.h>
+#include <QKeySequence>
 
 
 class newscene : public QGraphicsScene
@@ -21,14 +24,16 @@ class newscene : public QGraphicsScene
     Q_OBJECT
 
   public:
-     newscene(QObject *parent = 0);
+     newscene(QObject *parent = nullptr , QUndoStack* undoStack = nullptr);
 
-
+     void selectShape(int shapeNum);
 protected:
      
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
+
+
 
 private:
 
@@ -36,7 +41,8 @@ private:
     bool pressing = false;
     Shape* shape;
     int selectedShape;
-
+    QUndoStack *undoStack;
+    addCommand* addItem;
 };
 
 

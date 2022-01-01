@@ -7,6 +7,8 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsSceneMouseEvent>
 #include "Scene.h"
+#include "QUndoStack"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,9 +22,26 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+
+
+    void on_lineBtn_clicked();
+
+    void on_rectBtn_clicked();
+
+    void on_circleBtn_clicked();
+
+    void on_triangBtn_clicked();
+
+    void on_undoBtn_clicked();
+
+    void on_redoBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
-    newscene  *scene;
+    newscene* scene;
+    QUndoStack* undoStack;
+
 
 };
 #endif // MAINWINDOW_H

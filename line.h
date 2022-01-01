@@ -13,6 +13,7 @@ public:
     void setParemeters(int x2,int y2)override;
     float getperimeter()override;
     void addShape() override;
+    void deleteShape() override;
     QGraphicsLineItem* getShape();
 };
 

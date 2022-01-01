@@ -42,3 +42,8 @@ void Shape::addShape()
 {
 
 }
+
+void Shape::deleteShape()
+{
+
+}

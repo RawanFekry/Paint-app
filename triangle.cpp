@@ -27,4 +27,12 @@ float Triangle:: getperimeter(){
 
 void Triangle::addShape(){
 scene->addItem(triangle);
+scene->update();
+}
+
+void Triangle::deleteShape()
+{
+    scene->removeItem(triangle);
+    scene->update();
+
 }

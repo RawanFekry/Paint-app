@@ -40,4 +40,13 @@ QGraphicsEllipseItem* Circle::getShape()
 
 void Circle::addShape(){
 scene->addItem(circ);
+scene->update();
+
+}
+
+void Circle::deleteShape()
+{
+    scene->removeItem(circ);
+    scene->update();
+
 }

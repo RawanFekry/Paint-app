@@ -10,12 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setFixedSize(600,600);
 //    ui->graphicsView->resize(500,500);
     ui->graphicsView->setFixedSize(500,500);
-
-//    setCentralWidget(ui->graphicsView);
-    scene = new newscene();
-//    QGraphicsRectItem *rect = new QGraphicsRectItem(500, 500, 100, 100);
-//    scene->addItem(rect);
-//    rect->setRect(500, 500, -50, -500);
+    undoStack = new QUndoStack(this);
+    scene = new newscene(nullptr, undoStack);
     ui->graphicsView->setScene(scene);
     scene->setSceneRect(0,0,100,100);
     ui->graphicsView->setAlignment(Qt::AlignBottom | Qt::AlignLeft);
@@ -30,5 +26,44 @@ MainWindow::~MainWindow()
 {
     delete ui;
 
+}
+
+
+
+
+void MainWindow::on_lineBtn_clicked()
+{
+    scene->selectShape(1);
+}
+
+
+void MainWindow::on_rectBtn_clicked()
+{
+    scene->selectShape(2);
+}
+
+
+void MainWindow::on_circleBtn_clicked()
+{
+    scene->selectShape(3);
+}
+
+
+
+void MainWindow::on_triangBtn_clicked()
+{
+    scene->selectShape(4);
+}
+
+
+void MainWindow::on_undoBtn_clicked()
+{
+    undoStack->undo();
+}
+
+
+void MainWindow::on_redoBtn_clicked()
+{
+    undoStack->redo();
 }
 
