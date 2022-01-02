@@ -2,10 +2,6 @@
 Processes::Processes()
 {
 }
-//shape *newShape = new shape();
-//newShape->shapeName = name;
-//newhape->perimeter = perimeter;
-//shapes.push_back( newshape );
 
 void Processes::add(Shape* shape)
 {
