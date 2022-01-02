@@ -8,6 +8,7 @@ class Line : public Shape{
 
 public:
     Line(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene);
+      Line(QString name,float perimeter);
     ~Line();
     int length;
     void setParemeters(int x2,int y2)override;

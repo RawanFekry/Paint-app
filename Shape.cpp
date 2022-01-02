@@ -8,6 +8,11 @@ Shape::Shape(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene){
   pen.setWidth(linewidth);
 
 }
+Shape::Shape(QString name , float perimeter)
+{
+    this->name=name;
+    this->perimeter=perimeter;
+}
 
 Shape::~Shape(){
 
@@ -22,7 +27,7 @@ void Shape::setname(QString name){
    this->name=name;
 }
 
-QString Shape::getname(){
+QString Shape::getname() const{
     return name;
 }
 
@@ -47,3 +52,7 @@ void Shape::deleteShape()
 {
 
 }
+ float Shape:: get_perimeter() const
+ {
+     return perimeter;
+ }

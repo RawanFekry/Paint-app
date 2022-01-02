@@ -10,6 +10,7 @@ private:
 int diameter;
 public:
     Circle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene);
+     Circle(QString name,float perimeter);
     ~Circle();
     protected:
     void setParemeters(int x2,int y2 )override;

@@ -7,6 +7,12 @@ Triangle::Triangle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* sce
     triangle= new QGraphicsPolygonItem(polygon);
     triangle->setPen(pen);
 }
+Triangle::Triangle(QString name,float perimeter):
+    Shape( name, perimeter){
+    this->name=name;
+    this->perimeter=perimeter;
+
+}
 Triangle:: ~Triangle(){
 
 }

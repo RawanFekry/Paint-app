@@ -10,6 +10,7 @@ int width, hieght;
 
 public:
     Rectangle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene);
+    Rectangle(QString name,float perimeter);
     ~Rectangle();
 
     void setParemeters(int x2,int y2)override;

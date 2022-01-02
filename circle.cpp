@@ -7,6 +7,13 @@ Circle::Circle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene):
     circ= new QGraphicsEllipseItem(x1,y1,1,1);
     circ->setPen(pen);
 }
+Circle::Circle(QString name,float perimeter):
+    Shape( name, perimeter)
+{
+      this->name=name;
+      this->perimeter=perimeter;
+
+}
 
 void Circle::setParemeters(int x2,int y2){
     int width = x2 - x1;

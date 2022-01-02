@@ -7,7 +7,13 @@ Rectangle::Rectangle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* s
 rect=new QGraphicsRectItem(x1,y1,1,1);
 rect->setPen(pen);
 }
+Rectangle::Rectangle(QString name,float perimeter):
+    Shape( name, perimeter)
+{
+    this->name=name;
+    this->perimeter=perimeter;
 
+}
 Rectangle::~Rectangle(){
 }
 

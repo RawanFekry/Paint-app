@@ -12,9 +12,14 @@ void Line:: setParemeters(int x2,int y2){
     line->setLine(x1,y1,x2,y2);
 
 }
+Line::Line(QString name,float perimeter):
+    Shape( name, perimeter){
+    this->name=name;
+    this->perimeter=perimeter;
+    }
  Line:: ~Line(){
 
-}
+ }
 
 float Line::getperimeter(){
     perimeter = length;

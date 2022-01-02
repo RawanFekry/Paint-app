@@ -16,18 +16,20 @@ QGraphicsPolygonItem* triangle;
 QGraphicsLineItem* line;
 
     Shape(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene);
+     Shape(QString name, float perimeter);
     ~Shape();
 
     virtual void setParemeters(int x2,int y2);
     virtual float getperimeter();
     virtual void addShape();
     virtual void deleteShape();
-    void setname(QString name);
-    QString getname();
+    void setname(QString name) ;
+
+    QString getname() const;
     QColor getcolor();
     QString getshapeType();
     int getlinewidth();
-
+     float get_perimeter() const;
 
 protected:
 

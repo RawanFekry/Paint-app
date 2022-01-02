@@ -17,6 +17,7 @@ SOURCES += \
     line.cpp \
     main.cpp \
     mainwindow.cpp \
+    processes.cpp \
     triangle.cpp
 
 HEADERS += \
@@ -27,6 +28,7 @@ HEADERS += \
     commands.h \
     line.h \
     mainwindow.h \
+    processes.h \
     triangle.h
 
 FORMS += \
