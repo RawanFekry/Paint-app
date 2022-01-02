@@ -5,7 +5,8 @@
 newscene::newscene(QObject *parent, QUndoStack* undoStack):
     QGraphicsScene(parent)
 {
-
+    shapesMemory = new QVector<Shape*>();
+    Do = new Processes(shapesMemory);
     this->undoStack = undoStack;
     selectedShape = 1;
 };
@@ -32,6 +33,7 @@ void newscene::mousePressEvent(QGraphicsSceneMouseEvent *event){
 
         addItem = new addCommand(shape);
         undoStack->push(addItem);
+
         pressing = true;
         this->update();
     }
@@ -56,10 +58,27 @@ void newscene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     if (event->button() == Qt::LeftButton && pressing) {
         pressing = false;
         this->update();
+        Do->add(shape);
+        std::cout<<"Before: ";
+        printshapesInfo();
+        Do->sort_Ascending();
+//        Do->sort_Descending();
+        std::cout<<"After: ";
+        printshapesInfo();
 }
 }
 
  void newscene::selectShape(int shapeNum)
  {
      selectedShape = shapeNum;
+ }
+
+
+ void newscene::printshapesInfo()
+ {
+     for(auto shape: *shapesMemory)
+     {
+         std::cout<< shape->getperimeter()<<" ";
+     }
+     std::cout<<std::endl<<"====================="<<std::endl;
  }

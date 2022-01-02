@@ -1,19 +1,20 @@
 #include "processes.h"
-Processes::Processes()
+Processes::Processes(QVector<Shape*>* shapesMemory)
 {
+    this->shapesMemory = shapesMemory;
 }
 
 void Processes::add(Shape* shape)
 {
-    shapes->push_back(shape);
+    shapesMemory->push_back(shape);
 }
 
 Shape* Processes::search(QString shapeName)
 {     Shape* shape = new Shape(" ",0.0);
-   for (int i=0; i<shapes->size();i++){
-       if (shapes->at(i)->getname()==shapeName)
+   for (int i=0; i<shapesMemory->size();i++){
+       if (shapesMemory->at(i)->getname()==shapeName)
        {
-           return shapes->at(i);}
+           return shapesMemory->at(i);}
        } return shape;
 
 
@@ -21,17 +22,17 @@ Shape* Processes::search(QString shapeName)
 
 
 
-QVector<Shape*> Processes::  sort_Ascending (QVector <Shape*> *shapes)
+void Processes::  sort_Ascending ()
 {
-      this->shapes=shapes;
-    std:: sort(shapes->begin(), shapes->end(), Check_Asc());
-            return *shapes;
+
+    std:: sort(shapesMemory->begin(), shapesMemory->end(), Check_Asc());
+
 }
 
-QVector<Shape*> Processes:: sort_Descending (QVector <Shape*> *shapes)
+void Processes:: sort_Descending ()
 {
-    this->shapes=shapes;
-    std::sort(shapes->begin(), shapes->end(),Check_Des() );
-          return *shapes;
+
+    std::sort(shapesMemory->begin(), shapesMemory->end(),Check_Des() );
+
 }
 

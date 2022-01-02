@@ -15,7 +15,7 @@ addCommand::~addCommand()
 void addCommand::undo()
 {
     shape->deleteShape();
-    std::cout<<"undo";
+
 }
 
 void addCommand::redo()

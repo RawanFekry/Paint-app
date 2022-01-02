@@ -16,7 +16,8 @@
 #include <QAction>
 #include <QUndoStack>
 #include <commands.h>
-#include <QKeySequence>
+#include <processes.h>
+
 
 
 class newscene : public QGraphicsScene
@@ -27,11 +28,15 @@ class newscene : public QGraphicsScene
      newscene(QObject *parent = nullptr , QUndoStack* undoStack = nullptr);
 
      void selectShape(int shapeNum);
+
+     QVector<Shape*>* shapesMemory;
 protected:
      
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
+
+    void printshapesInfo();
 
 
 
@@ -43,6 +48,8 @@ private:
     int selectedShape;
     QUndoStack *undoStack;
     addCommand* addItem;
+    Processes* Do;
+
 };
 
 
