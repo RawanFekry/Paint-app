@@ -6,6 +6,7 @@ Triangle::Triangle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* sce
     polygon << QPointF(x1, y1) << QPointF(x1, y1) << QPointF(x1, y1);
     triangle= new QGraphicsPolygonItem(polygon);
     triangle->setPen(pen);
+    shapeType = "Triangle";
 }
 
 

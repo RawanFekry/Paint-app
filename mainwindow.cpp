@@ -67,3 +67,13 @@ void MainWindow::on_redoBtn_clicked()
     undoStack->redo();
 }
 
+
+void MainWindow::on_deleteBtn_clicked()
+{
+    Shape*  deletedShape = scene->getProcesses()->search(QString("Shape 2"));
+    if(deletedShape!= nullptr){
+    deleteCommand* deleteItem = new deleteCommand(deletedShape, scene->getProcesses());
+    undoStack->push(deleteItem);
+    }
+}
+

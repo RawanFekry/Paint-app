@@ -6,6 +6,7 @@ Circle::Circle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene):
 {
     circ= new QGraphicsEllipseItem(x1,y1,1,1);
     circ->setPen(pen);
+    shapeType = "Circle";
 }
 Circle::Circle(QString name,float perimeter):
     Shape( name, perimeter)

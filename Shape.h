@@ -23,13 +23,13 @@ QGraphicsLineItem* line;
     virtual float getperimeter();
     virtual void addShape();
     virtual void deleteShape();
-    void setname(QString name) ;
+    void setname(int shapeOrder) ;
 
     QString getname() const;
     QColor getcolor();
     QString getshapeType();
     int getlinewidth();
-     float get_perimeter() const;
+    float get_perimeter() const;
 
 protected:
 

@@ -30,6 +30,7 @@ class newscene : public QGraphicsScene
      void selectShape(int shapeNum);
 
      QVector<Shape*>* shapesMemory;
+     Processes* getProcesses();
 protected:
      
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
@@ -37,6 +38,10 @@ protected:
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
 
     void printshapesInfo();
+
+
+
+
 
 
 
@@ -49,6 +54,7 @@ private:
     QUndoStack *undoStack;
     addCommand* addItem;
     Processes* Do;
+    int shapeOrder;
 
 };
 

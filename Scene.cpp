@@ -9,6 +9,7 @@ newscene::newscene(QObject *parent, QUndoStack* undoStack):
     Do = new Processes(shapesMemory);
     this->undoStack = undoStack;
     selectedShape = 1;
+    shapeOrder = 0;
 };
 
 void newscene::mousePressEvent(QGraphicsSceneMouseEvent *event){
@@ -31,9 +32,10 @@ void newscene::mousePressEvent(QGraphicsSceneMouseEvent *event){
         }
 
 
-        addItem = new addCommand(shape);
+        addItem = new addCommand(shape, Do);
         undoStack->push(addItem);
-
+        shape->setname(shapeOrder++);
+        qDebug() <<shape->getname()<<" ";
         pressing = true;
         this->update();
     }
@@ -58,13 +60,13 @@ void newscene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     if (event->button() == Qt::LeftButton && pressing) {
         pressing = false;
         this->update();
-        Do->add(shape);
-        std::cout<<"Before: ";
-        printshapesInfo();
-        Do->sort_Ascending();
-//        Do->sort_Descending();
-        std::cout<<"After: ";
-        printshapesInfo();
+        //Do->add(shape);
+//        std::cout<<"Before: ";
+//        printshapesInfo();
+ //       Do->sort_Ascending();
+        Do->sort_Descending();
+//        std::cout<<"After: ";
+//        printshapesInfo();
 }
 }
 
@@ -81,4 +83,9 @@ void newscene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
          std::cout<< shape->getperimeter()<<" ";
      }
      std::cout<<std::endl<<"====================="<<std::endl;
+ }
+
+ Processes* newscene::getProcesses()
+ {
+     return Do;
  }

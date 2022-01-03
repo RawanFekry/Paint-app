@@ -23,8 +23,8 @@ void Shape::setParemeters(int x2, int y2){}
 float Shape::getperimeter(){}
 
 
-void Shape::setname(QString name){
-   this->name=name;
+void Shape::setname(int shapeOrder){
+   this->name=QString("Shape %1").arg(shapeOrder);
 }
 
 QString Shape::getname() const{

@@ -37,6 +37,8 @@ private slots:
 
     void on_redoBtn_clicked();
 
+    void on_deleteBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     newscene* scene;

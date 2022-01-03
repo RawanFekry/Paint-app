@@ -13,6 +13,12 @@ public:
 
     Shape* search(QString shapeName );
     void add(Shape* shape);
+    QVector<Shape*>* getMemory();
+
+    QVector<Shape*>* shapesMemory;
+    bool isAscending;
+
+
     struct  Check_Asc
     {
          bool operator()( const Shape* s1, const Shape* s2 ) const {
@@ -29,7 +35,7 @@ public:
      void sort_Descending ();
 
 private:
-     QVector<Shape*>* shapesMemory;
+
 };
 
 

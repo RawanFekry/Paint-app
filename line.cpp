@@ -3,8 +3,9 @@
 Line::Line(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene):
     Shape(x1, y1, color, linewidth, scene)
 {
-line= new QGraphicsLineItem(x1,y1,x1,y1);
-line->setPen(pen);
+    line= new QGraphicsLineItem(x1,y1,x1,y1);
+    line->setPen(pen);
+    shapeType = "Line";
 }
 
 void Line:: setParemeters(int x2,int y2){
