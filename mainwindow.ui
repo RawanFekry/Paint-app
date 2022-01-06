@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>600</height>
+    <width>817</width>
+    <height>620</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -54,101 +54,17 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="undoBtn">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>20</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>undo</string>
-    </property>
-    <property name="shortcut">
-     <string>Ctrl+Z</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="redoBtn">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>20</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>redo</string>
-    </property>
-    <property name="shortcut">
-     <string>Ctrl+Y</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="lineBtn">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>100</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Line</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="rectBtn">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>160</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Rectangle</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="circleBtn">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>220</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Circle</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="triangBtn">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>280</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Triangle</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="deleteBtn">
+   <widget class="QSpinBox" name="linewidthSpn">
     <property name="geometry">
      <rect>
       <x>320</x>
-      <y>20</y>
-      <width>80</width>
-      <height>24</height>
+      <y>0</y>
+      <width>71</width>
+      <height>29</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Delete</string>
+    <property name="maximum">
+     <number>100</number>
     </property>
    </widget>
   </widget>
@@ -157,12 +73,138 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>817</width>
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuhjda">
+    <property name="title">
+     <string>Shapes</string>
+    </property>
+    <addaction name="actShapes_Line"/>
+    <addaction name="actShapes_Rectangle"/>
+    <addaction name="actShapes_Circle"/>
+    <addaction name="actShapes_Triangle"/>
+   </widget>
+   <widget class="QMenu" name="menuColor">
+    <property name="title">
+     <string>Color</string>
+    </property>
+    <addaction name="actColor_Line"/>
+   </widget>
+   <widget class="QMenu" name="actStyle">
+    <property name="title">
+     <string>Line Style</string>
+    </property>
+    <addaction name="actLinestyle_Solid"/>
+    <addaction name="actLinestyle_Dense_Level_1"/>
+    <addaction name="actLinestyle_Dense_Level_2"/>
+    <addaction name="actLinestyle_Dense_Level_3"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actOpen"/>
+    <addaction name="actSave"/>
+    <addaction name="actUndo"/>
+    <addaction name="actRedo"/>
+    <addaction name="actDelete"/>
+    <addaction name="actSearch"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuhjda"/>
+   <addaction name="menuColor"/>
+   <addaction name="actStyle"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actShapes_Line">
+   <property name="text">
+    <string>Line</string>
+   </property>
+  </action>
+  <action name="actShapes_Rectangle">
+   <property name="text">
+    <string>Rectangle</string>
+   </property>
+  </action>
+  <action name="actShapes_Circle">
+   <property name="text">
+    <string>Circle</string>
+   </property>
+  </action>
+  <action name="actShapes_Triangle">
+   <property name="text">
+    <string>Triangle</string>
+   </property>
+  </action>
+  <action name="actColor_Line">
+   <property name="text">
+    <string>Linecolor</string>
+   </property>
+  </action>
+  <action name="actOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actUndo">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actRedo">
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actLinestyle_Dense_Level_1">
+   <property name="text">
+    <string>Dense Level 1</string>
+   </property>
+  </action>
+  <action name="actLinestyle_Dense_Level_2">
+   <property name="text">
+    <string>Dense Level 2</string>
+   </property>
+  </action>
+  <action name="actLinestyle_Dense_Level_3">
+   <property name="text">
+    <string>Dense Level 3</string>
+   </property>
+  </action>
+  <action name="actLinestyle_Solid">
+   <property name="text">
+    <string>Solid</string>
+   </property>
+   <property name="toolTip">
+    <string>Solid</string>
+   </property>
+  </action>
+  <action name="actDelete">
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </action>
+  <action name="actSearch">
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

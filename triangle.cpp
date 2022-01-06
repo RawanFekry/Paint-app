@@ -1,7 +1,7 @@
 #include "triangle.h"
 
-Triangle::Triangle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene):
-    Shape(x1,y1,color,linewidth, scene)
+Triangle::Triangle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsScene* scene):
+    Shape(x1,y1,color,brush,linewidth, scene)
 {
     polygon << QPointF(x1, y1) << QPointF(x1, y1) << QPointF(x1, y1);
     triangle= new QGraphicsPolygonItem(polygon);
@@ -9,14 +9,12 @@ Triangle::Triangle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* sce
     shapeType = "Triangle";
 }
 
-
 Triangle::Triangle(QString name,float perimeter):
     Shape( name, perimeter){
     this->name=name;
     this->perimeter=perimeter;
 
 }
-
 
 Triangle:: ~Triangle(){
 
@@ -29,21 +27,17 @@ void Triangle::setParemeters(int x2, int y2){
     triangle->setPolygon(polygon);
 }
 float Triangle:: getperimeter(){
-
-
     perimeter=3*abs(length);
     return perimeter;
 }
 
 
 void Triangle::addShape(){
-    scene->addItem(triangle);
-    scene->update();
+scene->addItem(triangle);
+scene->update();
 }
 
-void Triangle::deleteShape()
-{
+void Triangle::deleteShape(){
     scene->removeItem(triangle);
     scene->update();
-
 }

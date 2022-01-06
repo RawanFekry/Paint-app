@@ -9,8 +9,8 @@ class Triangle :public Shape
 public:
 
 
-    Triangle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene);
-     Triangle(QString name,float perimeter);
+    Triangle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsScene* scene);
+    Triangle(QString name,float perimeter);
     ~Triangle();
 
     void setParemeters(int x2,int y2)override;

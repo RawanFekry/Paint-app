@@ -5,7 +5,7 @@ addCommand::addCommand(Shape* shape, Processes* Do)
 {
     this->shape = shape;
     this->Do = Do;
-    
+
 }
 
 addCommand::~addCommand()

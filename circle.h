@@ -9,8 +9,8 @@ class Circle: public Shape{
 private:
 int diameter;
 public:
-    Circle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene);
-     Circle(QString name,float perimeter);
+    Circle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsScene* scene);
+    Circle(QString name,float perimeter);
     ~Circle();
     protected:
     void setParemeters(int x2,int y2 )override;

@@ -15,8 +15,8 @@ QGraphicsEllipseItem* circ;
 QGraphicsPolygonItem* triangle;
 QGraphicsLineItem* line;
 
-    Shape(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene);
-     Shape(QString name, float perimeter);
+    Shape(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsScene* scene);
+    Shape(QString name, float perimeter);
     ~Shape();
 
     virtual void setParemeters(int x2,int y2);
@@ -25,19 +25,20 @@ QGraphicsLineItem* line;
     virtual void deleteShape();
     void setname(int shapeOrder) ;
 
-    QString getname() const;
-    QColor getcolor();
-    QString getshapeType();
-    int getlinewidth();
+
+    virtual QString getname();
+    virtual QString getshapeType();
+    void setname(QString name);
+
     float get_perimeter() const;
+
 
 protected:
 
- QString name;
+QString name;
 float perimeter;
-QColor color;
 QString shapeType;
-int x1,y1,linewidth;
+int x1,y1;
 QPen pen;
 QGraphicsScene* scene;
 

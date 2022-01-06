@@ -1,19 +1,19 @@
 #include "circle.h"
 
 
-Circle::Circle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene):
-    Shape(x1 , y1, color, linewidth, scene)
+Circle::Circle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsScene* scene):
+    Shape(x1 , y1, color,brush, linewidth, scene)
 {
     circ= new QGraphicsEllipseItem(x1,y1,1,1);
     circ->setPen(pen);
     shapeType = "Circle";
 }
+
 Circle::Circle(QString name,float perimeter):
     Shape( name, perimeter)
 {
       this->name=name;
       this->perimeter=perimeter;
-
 }
 
 void Circle::setParemeters(int x2,int y2){

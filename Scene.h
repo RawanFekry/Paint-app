@@ -19,18 +19,17 @@
 #include <processes.h>
 
 
-
 class newscene : public QGraphicsScene
 {
     Q_OBJECT
 
-  public:
-     newscene(QObject *parent = nullptr , QUndoStack* undoStack = nullptr);
+public:
+    newscene(QObject *parent = nullptr , QUndoStack* undoStack = nullptr);
 
-     void selectShape(int shapeNum);
+    void selectShape(int shapeNum);
+    QVector<Shape*>* shapesMemory;
+    Processes* getProcesses();
 
-     QVector<Shape*>* shapesMemory;
-     Processes* getProcesses();
 protected:
      
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
@@ -39,10 +38,18 @@ protected:
 
     void printshapesInfo();
 
+public:
+     virtual QColor getLineColor();
+     void setLineColor(QColor color);
 
+     virtual QBrush getStyleShape();
+     void setStyleShape(QBrush brush);
 
+     virtual int getLineWidth();
+     void setLineWidth(int linewidth);
 
-
+//     virtual QColor getShapeColor();
+//     void setShapeColor(QColor color);
 
 
 private:
@@ -53,8 +60,13 @@ private:
     int selectedShape;
     QUndoStack *undoStack;
     addCommand* addItem;
+    QColor linecolor;
+    int linewidth;
+    QBrush brusher;
+//    QColor shapecolor;
     Processes* Do;
     int shapeOrder;
+
 
 };
 

@@ -37,13 +37,41 @@ private slots:
 
     void on_redoBtn_clicked();
 
-    void on_deleteBtn_clicked();
+    void on_shapecolorBtn_clicked();
+
+    void on_linewidthSpn_valueChanged(int arg1);
+
+    void on_fillshapeBtn_clicked();
+
+    void on_actShapes_Rectangle_triggered();
+
+    void on_actShapes_Line_triggered();
+
+    void on_actShapes_Circle_triggered();
+
+    void on_actShapes_Triangle_triggered();
+
+    void on_actUndo_triggered();
+
+    void on_actRedo_triggered();
+
+    void on_actColor_Line_triggered();
+
+    void on_actLinestyle_Dense_Level_1_triggered();
+
+    void on_actLinestyle_Dense_Level_2_triggered();
+
+    void on_actLinestyle_Dense_Level_3_triggered();
+
+
+
+    void on_actLinestyle_Solid_triggered();
+
+    void on_actDelete_triggered();
 
 private:
     Ui::MainWindow *ui;
     newscene* scene;
     QUndoStack* undoStack;
-
-
 };
 #endif // MAINWINDOW_H

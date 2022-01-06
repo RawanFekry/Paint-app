@@ -1,11 +1,11 @@
 #include "line.h"
 
-Line::Line(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene):
-    Shape(x1, y1, color, linewidth, scene)
+Line::Line(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsScene* scene):
+    Shape(x1, y1, color,brush, linewidth, scene)
 {
-    line= new QGraphicsLineItem(x1,y1,x1,y1);
-    line->setPen(pen);
-    shapeType = "Line";
+line= new QGraphicsLineItem(x1,y1,x1,y1);
+line->setPen(pen);
+shapeType = "Line";
 }
 
 void Line:: setParemeters(int x2,int y2){
@@ -13,14 +13,15 @@ void Line:: setParemeters(int x2,int y2){
     line->setLine(x1,y1,x2,y2);
 
 }
-Line::Line(QString name,float perimeter):
-    Shape( name, perimeter){
-    this->name=name;
-    this->perimeter=perimeter;
-    }
  Line:: ~Line(){
 
- }
+}
+
+Line::Line(QString name,float perimeter):
+     Shape( name, perimeter){
+     this->name=name;
+     this->perimeter=perimeter;
+}
 
 float Line::getperimeter(){
     perimeter = length;

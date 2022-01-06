@@ -1,14 +1,14 @@
 
 #include<Rectangle.h>
 
-Rectangle::Rectangle(int x1,int y1,QColor color,int linewidth, QGraphicsScene* scene ):
-    Shape(x1 ,y1 , color, linewidth, scene)
-{
+Rectangle::Rectangle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsScene* scene ):
+    Shape(x1 ,y1 , color,brush, linewidth, scene){
 
     rect=new QGraphicsRectItem(x1,y1,1,1);
     rect->setPen(pen);
     shapeType = "Rectangle";
 }
+
 Rectangle::Rectangle(QString name,float perimeter):
     Shape( name, perimeter)
 {
@@ -16,6 +16,7 @@ Rectangle::Rectangle(QString name,float perimeter):
     this->perimeter=perimeter;
 
 }
+
 Rectangle::~Rectangle(){
 }
 
@@ -41,5 +42,4 @@ void Rectangle::deleteShape()
 {
     scene->removeItem(rect);
     scene->update();
-
 }
