@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>817</width>
-    <height>620</height>
+    <width>1345</width>
+    <height>695</height>
    </rect>
   </property>
   <property name="mouseTracking">
@@ -23,10 +23,10 @@
    <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>50</y>
-      <width>500</width>
-      <height>500</height>
+      <x>10</x>
+      <y>40</y>
+      <width>801</width>
+      <height>541</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -67,13 +67,118 @@
      <number>100</number>
     </property>
    </widget>
+   <widget class="QLineEdit" name="ipLineEdit_Search">
+    <property name="geometry">
+     <rect>
+      <x>852</x>
+      <y>70</y>
+      <width>111</width>
+      <height>28</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSearch">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>70</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="opLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>1060</x>
+      <y>70</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ipLineEdit_Delete">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>113</width>
+      <height>28</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnDelete">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>0</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tblwdgShape">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>310</y>
+      <width>451</width>
+      <height>271</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSortA">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>280</y>
+      <width>101</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>sort ascending</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSortD">
+    <property name="geometry">
+     <rect>
+      <x>980</x>
+      <y>280</y>
+      <width>101</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>sort descending</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lineWidthLabel">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>0</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Line Width</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>817</width>
+     <width>1345</width>
      <height>21</height>
     </rect>
    </property>
@@ -91,11 +196,13 @@
      <string>Color</string>
     </property>
     <addaction name="actColor_Line"/>
+    <addaction name="actShapecolor"/>
    </widget>
    <widget class="QMenu" name="actStyle">
     <property name="title">
-     <string>Line Style</string>
+     <string>Fill Shape</string>
     </property>
+    <addaction name="actLinestyle_No_Brush"/>
     <addaction name="actLinestyle_Solid"/>
     <addaction name="actLinestyle_Dense_Level_1"/>
     <addaction name="actLinestyle_Dense_Level_2"/>
@@ -105,12 +212,8 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actOpen"/>
-    <addaction name="actSave"/>
     <addaction name="actUndo"/>
     <addaction name="actRedo"/>
-    <addaction name="actDelete"/>
-    <addaction name="actSearch"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuhjda"/>
@@ -151,9 +254,6 @@
   <action name="actSave">
    <property name="text">
     <string>Save</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+S</string>
    </property>
   </action>
   <action name="actUndo">
@@ -203,6 +303,16 @@
   <action name="actSearch">
    <property name="text">
     <string>Search</string>
+   </property>
+  </action>
+  <action name="actShapecolor">
+   <property name="text">
+    <string>Shapecolor</string>
+   </property>
+  </action>
+  <action name="actLinestyle_No_Brush">
+   <property name="text">
+    <string>No Brush</string>
    </property>
   </action>
  </widget>

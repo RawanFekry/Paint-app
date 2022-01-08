@@ -17,6 +17,8 @@
 #include <QUndoStack>
 #include <commands.h>
 #include <processes.h>
+#include <QTableWidget>
+#include <QHeaderView>
 
 
 class newscene : public QGraphicsScene
@@ -30,26 +32,28 @@ public:
     QVector<Shape*>* shapesMemory;
     Processes* getProcesses();
 
+    void UpdateTable();
+
+    QColor getLineColor();
+    void setLineColor(QColor color);
+
+    QBrush getStyleShape();
+    void setStyleShape(QBrush brush);
+
+    int getLineWidth();
+    void setLineWidth(int linewidth);
+
+    QColor getShapeColor();
+    void setShapeColor(QColor color);
+
+    void setInfoTable(QTableWidget *table);
+
+
 protected:
      
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
-
-    void printshapesInfo();
-
-public:
-     virtual QColor getLineColor();
-     void setLineColor(QColor color);
-
-     virtual QBrush getStyleShape();
-     void setStyleShape(QBrush brush);
-
-     virtual int getLineWidth();
-     void setLineWidth(int linewidth);
-
-//     virtual QColor getShapeColor();
-//     void setShapeColor(QColor color);
 
 
 private:
@@ -63,9 +67,10 @@ private:
     QColor linecolor;
     int linewidth;
     QBrush brusher;
-//    QColor shapecolor;
+    QColor shapecolor;
     Processes* Do;
     int shapeOrder;
+    QTableWidget* table;
 
 
 };

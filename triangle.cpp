@@ -6,15 +6,11 @@ Triangle::Triangle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraph
     polygon << QPointF(x1, y1) << QPointF(x1, y1) << QPointF(x1, y1);
     triangle= new QGraphicsPolygonItem(polygon);
     triangle->setPen(pen);
+    triangle->setBrush(brush);
     shapeType = "Triangle";
+    name=QString("Triangle %1").arg(triangleOrder++);
 }
 
-Triangle::Triangle(QString name,float perimeter):
-    Shape( name, perimeter){
-    this->name=name;
-    this->perimeter=perimeter;
-
-}
 
 Triangle:: ~Triangle(){
 
@@ -25,10 +21,11 @@ void Triangle::setParemeters(int x2, int y2){
     polygon.clear();
     polygon << QPointF(x1, y1) << QPointF(x1+.5*length, y2) << QPointF(x1-.5*length, y2);
     triangle->setPolygon(polygon);
+    setPerimeter();
 }
-float Triangle:: getperimeter(){
+void Triangle:: setPerimeter(){
     perimeter=3*abs(length);
-    return perimeter;
+
 }
 
 

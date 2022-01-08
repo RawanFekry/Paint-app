@@ -14,9 +14,12 @@ public:
     Shape* search(QString shapeName );
     void add(Shape* shape);
     QVector<Shape*>* getMemory();
+    void sort_Ascending();
+    void sort_Descending();
 
     QVector<Shape*>* shapesMemory;
     bool isAscending;
+
 
 
     struct  Check_Asc
@@ -25,16 +28,14 @@ public:
             return s1->get_perimeter() < s2->get_perimeter();
         }
     };
+
+
     struct  Check_Des
     {
          bool operator()( const Shape* s1, const Shape* s2 ) const {
             return s1->get_perimeter() > s2->get_perimeter();
         }
     };
-    void sort_Ascending ();
-     void sort_Descending ();
-
-private:
 
 };
 

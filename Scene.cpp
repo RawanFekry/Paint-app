@@ -2,11 +2,19 @@
 #include <iostream>
 #include <QtDebug>
 
+
+int Line::lineOrder = 1;
+int Circle::circleOrder = 1;
+int Rectangle::rectOrder = 1;
+int Triangle::triangleOrder = 1;
+
 newscene::newscene(QObject *parent, QUndoStack* undoStack):
     QGraphicsScene(parent),
-    linecolor(Qt::blue),
-    linewidth(2),
-    brusher(linecolor,Qt::SolidPattern)
+    linecolor(Qt::black),
+    linewidth(1),
+    brusher(shapecolor,Qt::SolidPattern),
+    shapecolor(Qt::blue)
+
 
 {
     shapesMemory = new QVector<Shape*>();
@@ -14,6 +22,7 @@ newscene::newscene(QObject *parent, QUndoStack* undoStack):
     this->undoStack = undoStack;
     selectedShape = 1;
     shapeOrder = 0;
+
 };
 
 
@@ -39,8 +48,8 @@ void newscene::mousePressEvent(QGraphicsSceneMouseEvent *event){
 
         addItem = new addCommand(shape, Do);
         undoStack->push(addItem);
-        shape->setname(shapeOrder++);
-        qDebug() <<shape->getname()<<" ";
+        //shape->setname(shapeOrder++);
+        //qDebug() <<shape->getname()<<" ";
         pressing = true;
         this->update();
     }
@@ -62,13 +71,7 @@ void newscene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     if (event->button() == Qt::LeftButton && pressing) {
         pressing = false;
         this->update();
-        //Do->add(shape);
-//        std::cout<<"Before: ";
-//        printshapesInfo();
- //       Do->sort_Ascending();
-        Do->sort_Descending();
-//        std::cout<<"After: ";
-//        printshapesInfo();
+        UpdateTable();
     }
 }
 
@@ -78,14 +81,7 @@ void newscene::selectShape(int shapeNum)
      selectedShape = shapeNum;
 }
 
-void newscene::printshapesInfo()
-{
-    for(auto shape: *shapesMemory)
-    {
-        std::cout<< shape->getperimeter()<<" ";
-    }
-    std::cout<<std::endl<<"====================="<<std::endl;
-}
+
 
 Processes* newscene::getProcesses()
 {
@@ -96,9 +92,9 @@ void newscene:: setLineColor(QColor color){
      this->linecolor = color;
 }
 
-//void newscene:: setShapeColor(QColor color){
-//    this->shapecolor = color;
-//}
+void newscene:: setShapeColor(QColor color){
+    this->shapecolor = color;
+}
 
 void newscene:: setStyleShape(QBrush brush){
     this->brusher = brush;
@@ -123,9 +119,77 @@ QBrush newscene:: getStyleShape(){
     return this->brusher;
 }
 
-//QColor newscene:: getShapeColor(){
-//    return this->shapecolor;
-//}
+QColor newscene:: getShapeColor(){
+    return this->shapecolor;
+}
+
+void newscene::UpdateTable()
+{
+    QStringList TableLabel;
+    TableLabel<<"Name"<<"Type"<<"Perimter"<<"LineWeight"<<"Color";
+
+    table->setColumnCount(5);
+    table->setHorizontalHeaderLabels(TableLabel);
+    while (table->rowCount() > 0)
+    {
+        table->removeRow(0);
+    }
+
+    for(auto* item:*shapesMemory){
+        // Initializing the Figure Values
+        QString name= item->Shape::getname();
+        QString Type= item->Shape::getshapeType();
+        QString Perimeter = QString::number(item->Shape::get_perimeter());
+        QString linewidth = QString::number(item->Shape::pen.width());
+        QString linecolor = (item->Shape::pen.color()).name();
+
+
+        // Insert New row in the table
+        table->insertRow(table->rowCount());
+
+        // Setting the row values
+        table->setItem(table->rowCount()-1, 0, new QTableWidgetItem(name));
+        table->setItem(table->rowCount()-1, 1, new QTableWidgetItem(Type));
+        table->setItem(table->rowCount()-1, 2, new QTableWidgetItem(Perimeter));
+        table->setItem(table->rowCount()-1, 3, new QTableWidgetItem(linewidth));
+        table->setItem(table->rowCount()-1, 4, new QTableWidgetItem(linecolor));
+
+
+
+        table->setStyleSheet(
+                    "QTableWidget{"
+                    "background-color: #C0C0C0;"
+                    "alternate-background-color: #606060;"
+                    "selection-background-color: #282828;"
+                    "}");
+        table->setAlternatingRowColors(true);
+
+        //Cell Items Properties
+        table->setSelectionMode(QAbstractItemView::SingleSelection);
+        table->setSelectionBehavior(QAbstractItemView::SelectRows);
+        table->setTextElideMode(Qt::ElideRight);
+
+        //Table Properties
+        table->setShowGrid(true);
+        table->setGridStyle(Qt::DotLine);
+        table->setSortingEnabled(true);
+        table->setCornerButtonEnabled(true);
+
+        //Header Properties
+        table->horizontalHeader()->setVisible(true);
+        table->horizontalHeader()->setDefaultSectionSize(150);
+        table->horizontalHeader()->setStretchLastSection(true);
+
+
+    }
+
+}
+
+void newscene::setInfoTable(QTableWidget *table)
+{
+    this->table= table;
+}
+
 
 
 

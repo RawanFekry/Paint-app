@@ -10,14 +10,16 @@ int width, hieght;
 
 public:
     Rectangle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsScene* scene);
-    Rectangle(QString name,float perimeter);
+
     ~Rectangle();
 
     void setParemeters(int x2,int y2)override;
-    float getperimeter()override;
+    void setPerimeter()override;
     void addShape() override;
     void deleteShape() override;
 
+
+    static int rectOrder;
 };
 
 

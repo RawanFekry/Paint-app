@@ -6,16 +6,11 @@ Rectangle::Rectangle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGra
 
     rect=new QGraphicsRectItem(x1,y1,1,1);
     rect->setPen(pen);
+    rect->setBrush(brush);
     shapeType = "Rectangle";
+    name=QString("Rectangle %1").arg(rectOrder++);
 }
 
-Rectangle::Rectangle(QString name,float perimeter):
-    Shape( name, perimeter)
-{
-    this->name=name;
-    this->perimeter=perimeter;
-
-}
 
 Rectangle::~Rectangle(){
 }
@@ -24,11 +19,12 @@ void Rectangle::setParemeters(int x2, int y2){
     width = x2 - x1;
     hieght = y2 - y1;
     rect->setRect(x1, y1, width, hieght);
+    setPerimeter();
 }
 
-float Rectangle::getperimeter(){
-    perimeter=2*(abs(width)+abs(hieght));
-  return perimeter;
+void Rectangle::setPerimeter(){
+    perimeter=int(2*(abs(width)+abs(hieght)));
+
 }
 
 

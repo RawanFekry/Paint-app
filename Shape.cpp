@@ -6,16 +6,11 @@ Shape::Shape(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsSce
     this->y1 = y1;
     this->scene = scene;
     pen.setColor(color);
-    pen.setBrush(brush);
     pen.setWidth(linewidth);
 
 }
 
-Shape::Shape(QString name , float perimeter)
-{
-    this->name=name;
-    this->perimeter=perimeter;
-}
+
 
 Shape::~Shape(){
 
@@ -23,12 +18,17 @@ Shape::~Shape(){
 
 
 void Shape::setParemeters(int x2, int y2){}
-float Shape::getperimeter(){}
 
 
-void Shape::setname(int shapeOrder){
-   this->name=QString("Shape %1").arg(shapeOrder);
+void Shape::setPerimeter()
+{
 }
+
+void Shape::setname(QString name)
+{
+    this->name = name;
+}
+
 
 QString Shape::getname(){
     return name;
@@ -52,7 +52,8 @@ void Shape::deleteShape()
 
 }
 
-float Shape:: get_perimeter() const
+float Shape:: get_perimeter()const
 {
     return perimeter;
 }
+

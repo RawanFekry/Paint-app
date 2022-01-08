@@ -8,6 +8,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include "Scene.h"
 #include "QUndoStack"
+#include <QTableWidget>
 
 
 QT_BEGIN_NAMESPACE
@@ -25,23 +26,8 @@ public:
 private slots:
 
 
-    void on_lineBtn_clicked();
-
-    void on_rectBtn_clicked();
-
-    void on_circleBtn_clicked();
-
-    void on_triangBtn_clicked();
-
-    void on_undoBtn_clicked();
-
-    void on_redoBtn_clicked();
-
-    void on_shapecolorBtn_clicked();
 
     void on_linewidthSpn_valueChanged(int arg1);
-
-    void on_fillshapeBtn_clicked();
 
     void on_actShapes_Rectangle_triggered();
 
@@ -67,7 +53,25 @@ private slots:
 
     void on_actLinestyle_Solid_triggered();
 
-    void on_actDelete_triggered();
+
+
+    void on_actShapecolor_triggered();
+
+    void on_actLinestyle_No_Brush_triggered();
+
+
+
+    void on_btnSearch_clicked();
+
+
+
+    void on_btnDelete_clicked();
+
+
+
+    void on_btnSortA_clicked();
+
+    void on_btnSortD_clicked();
 
 private:
     Ui::MainWindow *ui;

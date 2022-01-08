@@ -17,7 +17,6 @@ void addCommand::undo()
 {
     shape->deleteShape();
     Do->shapesMemory->erase(std::find(Do->shapesMemory->begin(),Do->shapesMemory->end(),shape));
-
 }
 
 void addCommand::redo()

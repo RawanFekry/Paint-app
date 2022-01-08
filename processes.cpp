@@ -32,13 +32,14 @@ void Processes::  sort_Ascending ()
 
 void Processes:: sort_Descending ()
 {
-
     std::sort(shapesMemory->begin(), shapesMemory->end(),Check_Des() );
     isAscending = false;
-
 }
+
 
 QVector<Shape*>* Processes::getMemory()
 {
     return shapesMemory;
 }
+
+

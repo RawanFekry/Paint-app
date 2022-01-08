@@ -6,15 +6,12 @@ Circle::Circle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsS
 {
     circ= new QGraphicsEllipseItem(x1,y1,1,1);
     circ->setPen(pen);
+    circ->setBrush(brush);
     shapeType = "Circle";
+    name=QString("Circle %1").arg(circleOrder++);
 }
 
-Circle::Circle(QString name,float perimeter):
-    Shape( name, perimeter)
-{
-      this->name=name;
-      this->perimeter=perimeter;
-}
+
 
 void Circle::setParemeters(int x2,int y2){
     int width = x2 - x1;
@@ -28,6 +25,7 @@ void Circle::setParemeters(int x2,int y2){
 
 
     circ->setRect(x1,y1,width_dirc,hieght_dirc);
+    setPerimeter();
 }
 
 Circle::~Circle(){
@@ -35,10 +33,10 @@ Circle::~Circle(){
 
 
 
-float Circle::getperimeter(){
+void Circle::setPerimeter(){
   perimeter= M_PI*abs(diameter);
 
-  return perimeter;
+
 }
 
 QGraphicsEllipseItem* Circle::getShape()

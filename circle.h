@@ -10,14 +10,18 @@ private:
 int diameter;
 public:
     Circle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsScene* scene);
-    Circle(QString name,float perimeter);
+
     ~Circle();
+
+    static int circleOrder;
     protected:
     void setParemeters(int x2,int y2 )override;
-    float getperimeter()override;
+    void setPerimeter()override;
     void addShape() override;
     void deleteShape() override;
     QGraphicsEllipseItem* getShape();
+
+
 };
 
 #endif // CIRCLE_H

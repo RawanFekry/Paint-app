@@ -10,13 +10,16 @@ public:
 
 
     Triangle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsScene* scene);
-    Triangle(QString name,float perimeter);
+
     ~Triangle();
 
     void setParemeters(int x2,int y2)override;
-    float getperimeter()override;
+    void setPerimeter()override;
     void addShape() override;
     void deleteShape() override;
+
+
+    static int triangleOrder;
 
 private:
     QPolygonF polygon;
