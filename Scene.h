@@ -37,16 +37,16 @@ public:
     QColor getLineColor();
     void setLineColor(QColor color);
 
-    QBrush getStyleShape();
-    void setStyleShape(QBrush brush);
+
 
     int getLineWidth();
     void setLineWidth(int linewidth);
 
-    QColor getShapeColor();
-    void setShapeColor(QColor color);
+
 
     void setInfoTable(QTableWidget *table);
+
+    void setBrush(QBrush* brush);
 
 
 protected:
@@ -66,7 +66,7 @@ private:
     addCommand* addItem;
     QColor linecolor;
     int linewidth;
-    QBrush brusher;
+    QBrush* brusher;
     QColor shapecolor;
     Processes* Do;
     int shapeOrder;

@@ -73,9 +73,12 @@ private slots:
 
     void on_btnSortD_clicked();
 
+    void on_tblwdgShape_cellChanged(int row, int column);
+
 private:
     Ui::MainWindow *ui;
     newscene* scene;
     QUndoStack* undoStack;
+    QBrush* brush;
 };
 #endif // MAINWINDOW_H

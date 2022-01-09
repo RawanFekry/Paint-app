@@ -20,7 +20,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
+// edited
+    brush = new QBrush();
+    brush->setStyle(Qt::NoBrush);
+    scene->setBrush(brush);
+    brush->setColor(Qt::black);
 
 
 }
@@ -89,50 +93,48 @@ void MainWindow::on_actRedo_triggered()
 
 void MainWindow::on_actColor_Line_triggered()
 {
-    QColor color = QColorDialog::getColor(scene->getLineColor(), this, "Please, select the line color");
+    QColor color = QColorDialog::getColor();
     scene->setLineColor(color);
+
 }
 
 
 void MainWindow::on_actShapecolor_triggered()
 {
-    QColor color = QColorDialog::getColor(scene->getShapeColor(), this, "Please, select the line color");
-    scene->setShapeColor(color);
-    QBrush brush(scene->getShapeColor(),Qt::NoBrush);
-    scene->setStyleShape(brush);
+    QColor color = QColorDialog::getColor();
+
+    brush->setColor(color);
+
 
 }
 
 void MainWindow::on_actLinestyle_No_Brush_triggered()
 {
-    QBrush brush(scene->getShapeColor(),Qt::NoBrush);
-    scene->setStyleShape(brush);
+    brush->setStyle(Qt::NoBrush);
+
 }
 
 void MainWindow::on_actLinestyle_Solid_triggered()
 {
-    QBrush brush(scene->getShapeColor(),Qt::SolidPattern);
-    scene->setStyleShape(brush);
+
+    brush->setStyle(Qt::SolidPattern);
 }
 
 void MainWindow::on_actLinestyle_Dense_Level_1_triggered()
 {
-    QBrush brush(scene->getShapeColor(),Qt::Dense1Pattern);
-    scene->setStyleShape(brush);
+    brush->setStyle(Qt::Dense1Pattern);
 }
 
 
 void MainWindow::on_actLinestyle_Dense_Level_2_triggered()
 {
-    QBrush brush(scene->getShapeColor(),Qt::Dense3Pattern);
-    scene->setStyleShape(brush);
+    brush->setStyle(Qt::Dense3Pattern);
 }
 
 
 void MainWindow::on_actLinestyle_Dense_Level_3_triggered()
 {
-    QBrush brush(scene->getShapeColor(),Qt::Dense5Pattern);
-    scene->setStyleShape(brush);
+    brush->setStyle(Qt::Dense5Pattern);
 }
 
 
@@ -144,7 +146,17 @@ void MainWindow::on_btnSearch_clicked()
 {
      Shape*  searchedShape = scene->getProcesses()->search(QString(ui->ipLineEdit_Search->text()));
      if (searchedShape != nullptr){
-     ui->opLineEdit->setText(searchedShape->getname());
+         QString name = "Shape Name: " + searchedShape->getname()+"\n\n";
+         QString shapeType = "Shape Type: " + searchedShape->getshapeType() + "\n\n";
+         QString perimeter = "Perimter: " + QString::number(searchedShape->get_perimeter()) + "\n\n";
+         QString lineWidth = "Line Width: " + QString::number(searchedShape->Shape::pen.width()) + "\n\n";
+         QString color = "Color: " + searchedShape->Shape::pen.color().name() + "\n\n";
+         QString text(name + shapeType + perimeter + lineWidth + color);
+         ui->opLineEdit->setText("<font color='black'> </font");
+         ui->opLineEdit->setText(text);
+     }
+     else{
+         ui->opLineEdit->setText("<font color='red'>There is no matching name.</font");
      }
 }
 
@@ -154,9 +166,16 @@ void MainWindow::on_btnDelete_clicked()
 {
     Shape*  deletedShape = scene->getProcesses()->search(QString(ui->ipLineEdit_Delete->text()));
     if(deletedShape!= nullptr){
-    deleteCommand* deleteItem = new deleteCommand(deletedShape, scene->getProcesses());
-    undoStack->push(deleteItem);
-    scene->UpdateTable();
+        deleteCommand* deleteItem = new deleteCommand(deletedShape, scene->getProcesses());
+        undoStack->push(deleteItem);
+        scene->UpdateTable();
+        ui->deleErrorMesg->setText("");
+    }
+    else{
+
+        ui->deleErrorMesg->setText("<font color='red'>There is no matching name.</font>");
+
+
     }
 }
 
@@ -175,5 +194,15 @@ void MainWindow::on_btnSortD_clicked()
 {
     scene->getProcesses()->sort_Descending();
     scene->UpdateTable();
+}
+
+
+void MainWindow::on_tblwdgShape_cellChanged(int row, int column)
+{
+    if(column!=0)
+        return;
+    QString newName = QString(ui->tblwdgShape->item(row, column)->data(Qt::DisplayRole).toString());
+    scene->getProcesses()->getMemory()->at(row)->setname(newName);
+
 }
 

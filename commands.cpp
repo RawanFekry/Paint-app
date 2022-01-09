@@ -23,12 +23,7 @@ void addCommand::redo()
 {
     shape->addShape();
     Do->add(shape);
-    if(Do->isAscending){
-    Do->sort_Ascending();
-    }
-    else{
-        Do->sort_Descending();
-    }
+
 
 }
 
@@ -46,12 +41,8 @@ void deleteCommand::undo()
 {
     shape->addShape();
     Do->add(shape);
-    if(Do->isAscending){
-    Do->sort_Ascending();
-    }
-    else{
-        Do->sort_Descending();
-    }
+
+
 }
 
 void deleteCommand::redo()

@@ -10,10 +10,8 @@ int Triangle::triangleOrder = 1;
 
 newscene::newscene(QObject *parent, QUndoStack* undoStack):
     QGraphicsScene(parent),
-    linecolor(Qt::black),
-    linewidth(1),
-    brusher(shapecolor,Qt::SolidPattern),
-    shapecolor(Qt::blue)
+  linecolor(Qt::black),
+  linewidth(1)
 
 
 {
@@ -33,23 +31,21 @@ void newscene::mousePressEvent(QGraphicsSceneMouseEvent *event){
         y1 = event->scenePos().ry();
         switch(selectedShape){
         case 1:
-            shape = new Line(x1, y1,linecolor,brusher,linewidth,this);
+            shape = new Line(x1, y1,linecolor,*brusher,linewidth,this);
             break;
         case 2:
-            shape = new Rectangle(x1, y1,linecolor,brusher,linewidth,this);
+            shape = new Rectangle(x1, y1,linecolor,*brusher,linewidth,this);
             break;
         case 3:
-            shape = new Circle(x1, y1,linecolor,brusher,linewidth,this);
+            shape = new Circle(x1, y1,linecolor,*brusher,linewidth,this);
             break;
         case 4:
-            shape = new Triangle(x1, y1,linecolor,brusher,linewidth,this);
+            shape = new Triangle(x1, y1,linecolor,*brusher,linewidth,this);
             break;
         }
 
         addItem = new addCommand(shape, Do);
         undoStack->push(addItem);
-        //shape->setname(shapeOrder++);
-        //qDebug() <<shape->getname()<<" ";
         pressing = true;
         this->update();
     }
@@ -92,16 +88,14 @@ void newscene:: setLineColor(QColor color){
      this->linecolor = color;
 }
 
-void newscene:: setShapeColor(QColor color){
-    this->shapecolor = color;
-}
-
-void newscene:: setStyleShape(QBrush brush){
-    this->brusher = brush;
-}
 
 void newscene:: setLineWidth(int linewidth){
      this->linewidth = linewidth;
+}
+
+void newscene::setBrush(QBrush* brush)
+{
+    brusher = brush;
 }
 
 
@@ -115,13 +109,6 @@ int newscene:: getLineWidth(){
     return this->linewidth;
 }
 
-QBrush newscene:: getStyleShape(){
-    return this->brusher;
-}
-
-QColor newscene:: getShapeColor(){
-    return this->shapecolor;
-}
 
 void newscene::UpdateTable()
 {
