@@ -29,7 +29,7 @@ public:
     newscene(QObject *parent = nullptr , QUndoStack* undoStack = nullptr);
 
     void selectShape(int shapeNum);
-    QVector<Shape*>* shapesMemory;
+    QVector<Shape*>* shapesMemory; //  The vector which we store all the drawn shapes within.
     Processes* getProcesses();
 
     void UpdateTable();

@@ -39,12 +39,11 @@ QPen pen;
 
 protected:
 
-QString name;
-float perimeter;
-QString shapeType;
-int x1,y1;
-QGraphicsScene* scene;
-
+QString name;   //  The Shape name.
+float perimeter;    //  The perimiter of the Shape.
+QString shapeType;  //  The type of the Shape.
+int x1,y1;  //  The points which we make our drawing with.
+QGraphicsScene* scene;  //  The scene pointer which make all the attributes of the Shape Class accessible to the MainWindow.
 };
 
 

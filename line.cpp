@@ -6,10 +6,11 @@ Line::Line(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsScene
     line= new QGraphicsLineItem(x1,y1,x1,y1);
     line->setPen(pen);
     shapeType = "Line";
-    name=QString("Line %1").arg(lineOrder++);
+    name=QString("Line %1").arg(lineOrder++);//  The Shapename of the line after drawing the Line Shape.
 
 }
 
+//override on SetParemeter function to determine the perimeter of the any Line drawn.
 void Line:: setParemeters(int x2,int y2){
     length = pow((pow((x1-x2),2)+pow((y1-y2),2)),0.5);
     line->setLine(x1,y1,x2,y2);

@@ -8,10 +8,11 @@ Circle::Circle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsS
     circ->setPen(pen);
     circ->setBrush(brush);
     shapeType = "Circle";
-    name=QString("Circle %1").arg(circleOrder++);
+    name=QString("Circle %1").arg(circleOrder++);//  The Shapename of the circle after drawing the Circle Shape.
 }
 
 
+// override on SetParemeter function to determine the perimeter of the any circle drawn
 
 void Circle::setParemeters(int x2,int y2){
     int width = x2 - x1;

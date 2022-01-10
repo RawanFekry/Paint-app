@@ -52,4 +52,8 @@ DISTFILES += \
     Icons/rectangle.jpg \
     Icons/redo-131964753186720817.png \
     Icons/solid.png \
-    Icons/triangle.png
+    Icons/triangle.png \
+    README.txt
+
+RESOURCES += \
+    icon.qrc

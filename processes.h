@@ -21,7 +21,7 @@ public:
     bool isAscending;
 
 
-
+    // here perimeter of  shape is compared with the previous  shape in the vector and if the its perimeter is bigger replace  the 2 shapes
     struct  Check_Asc
     {
          bool operator()( const Shape* s1, const Shape* s2 ) const {
@@ -29,7 +29,7 @@ public:
         }
     };
 
-
+    // here perimeter of  shape is compared with the previous  shape in the vector and if the its perimeter is smaller replace  the 2 shapes
     struct  Check_Des
     {
          bool operator()( const Shape* s1, const Shape* s2 ) const {

@@ -8,13 +8,14 @@ Rectangle::Rectangle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGra
     rect->setPen(pen);
     rect->setBrush(brush);
     shapeType = "Rectangle";
-    name=QString("Rectangle %1").arg(rectOrder++);
+    name=QString("Rectangle %1").arg(rectOrder++);//  The Shapename of the Rectangle after drawing the Rectangle Shape.
 }
 
 
 Rectangle::~Rectangle(){
 }
 
+//override on SetParemeter function to determine the perimeter of the any Rectangle drawn.
 void Rectangle::setParemeters(int x2, int y2){
     width = x2 - x1;
     hieght = y2 - y1;

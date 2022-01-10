@@ -6,9 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1345</width>
-    <height>695</height>
+    <width>1365</width>
+    <height>713</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+    <italic>false</italic>
+   </font>
+  </property>
+  <property name="cursor">
+   <cursorShape>PointingHandCursor</cursorShape>
   </property>
   <property name="mouseTracking">
    <bool>true</bool>
@@ -17,16 +26,29 @@
    <bool>true</bool>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>PaintApp</string>
+  </property>
+  <property name="toolTip">
+   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Monotype Corsiva'; font-size:16pt; font-weight:400; font-style:italic;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </property>
+  <property name="statusTip">
+   <string/>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGraphicsView" name="graphicsView">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>40</y>
+      <x>40</x>
+      <y>10</y>
       <width>801</width>
-      <height>541</height>
+      <height>591</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -44,22 +66,34 @@
     <property name="maximumSize">
      <size>
       <width>831</width>
-      <height>541</height>
+      <height>800</height>
      </size>
     </property>
+    <property name="cursor" stdset="0">
+     <cursorShape>CrossCursor</cursorShape>
+    </property>
     <property name="mouseTracking">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="tabletTracking">
-     <bool>false</bool>
+     <bool>true</bool>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icon/icon/Actions-draw-brush-icon.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="toolTipDuration">
+     <number>-1</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QSpinBox" name="linewidthSpn">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>0</y>
-      <width>71</width>
+      <x>900</x>
+      <y>180</y>
+      <width>111</width>
       <height>29</height>
      </rect>
     </property>
@@ -70,116 +104,81 @@
    <widget class="QLineEdit" name="ipLineEdit_Search">
     <property name="geometry">
      <rect>
-      <x>852</x>
-      <y>70</y>
+      <x>1160</x>
+      <y>30</y>
       <width>111</width>
       <height>28</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QPushButton" name="btnSearch">
-    <property name="geometry">
-     <rect>
-      <x>970</x>
-      <y>70</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Search</string>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <italic>false</italic>
+     </font>
     </property>
    </widget>
    <widget class="QTextBrowser" name="opLineEdit">
     <property name="geometry">
      <rect>
-      <x>1060</x>
-      <y>70</y>
-      <width>256</width>
-      <height>192</height>
+      <x>900</x>
+      <y>20</y>
+      <width>211</width>
+      <height>141</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <italic>false</italic>
+     </font>
     </property>
    </widget>
    <widget class="QLineEdit" name="ipLineEdit_Delete">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>0</y>
+      <x>1160</x>
+      <y>90</y>
       <width>113</width>
       <height>28</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QPushButton" name="btnDelete">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>0</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Delete</string>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <italic>false</italic>
+     </font>
     </property>
    </widget>
    <widget class="QTableWidget" name="tblwdgShape">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>310</y>
-      <width>451</width>
-      <height>271</height>
+      <x>900</x>
+      <y>220</y>
+      <width>351</width>
+      <height>191</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QPushButton" name="btnSortA">
-    <property name="geometry">
-     <rect>
-      <x>860</x>
-      <y>280</y>
-      <width>101</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>sort ascending</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnSortD">
-    <property name="geometry">
-     <rect>
-      <x>980</x>
-      <y>280</y>
-      <width>111</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>sort descending</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lineWidthLabel">
-    <property name="geometry">
-     <rect>
-      <x>540</x>
-      <y>0</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Line Width</string>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <italic>false</italic>
+     </font>
     </property>
    </widget>
    <widget class="QLabel" name="deleErrorMesg">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>0</y>
-      <width>271</width>
+      <x>1130</x>
+      <y>130</y>
+      <width>171</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <italic>false</italic>
+     </font>
     </property>
     <property name="text">
      <string/>
@@ -188,55 +187,199 @@
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QGraphicsView" name="graphicsView_2">
+    <property name="geometry">
+     <rect>
+      <x>-5</x>
+      <y>-9</y>
+      <width>1451</width>
+      <height>721</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/icon/icon/back1.jpg);
+
+</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>420</y>
+      <width>251</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/icon/icon/Wwalczyszyn-Iwindows-Paint.ico);</string>
+    </property>
+   </widget>
+   <zorder>graphicsView_2</zorder>
+   <zorder>graphicsView</zorder>
+   <zorder>linewidthSpn</zorder>
+   <zorder>ipLineEdit_Search</zorder>
+   <zorder>opLineEdit</zorder>
+   <zorder>ipLineEdit_Delete</zorder>
+   <zorder>tblwdgShape</zorder>
+   <zorder>deleErrorMesg</zorder>
+   <zorder>widget</zorder>
   </widget>
-  <widget class="QMenuBar" name="menubar">
+  <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1345</width>
-     <height>25</height>
+     <width>1365</width>
+     <height>27</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuhjda">
-    <property name="title">
-     <string>Shapes</string>
-    </property>
-    <addaction name="actShapes_Line"/>
-    <addaction name="actShapes_Rectangle"/>
-    <addaction name="actShapes_Circle"/>
-    <addaction name="actShapes_Triangle"/>
-   </widget>
-   <widget class="QMenu" name="menuColor">
-    <property name="title">
-     <string>Color</string>
-    </property>
-    <addaction name="actColor_Line"/>
-    <addaction name="actShapecolor"/>
-   </widget>
-   <widget class="QMenu" name="actStyle">
-    <property name="title">
-     <string>Fill Shape</string>
-    </property>
-    <addaction name="actLinestyle_No_Brush"/>
-    <addaction name="actLinestyle_Solid"/>
-    <addaction name="actLinestyle_Dense_Level_1"/>
-    <addaction name="actLinestyle_Dense_Level_2"/>
-    <addaction name="actLinestyle_Dense_Level_3"/>
-   </widget>
    <widget class="QMenu" name="menuFile">
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actUndo"/>
-    <addaction name="actRedo"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="actionSorting_Ascending"/>
+    <addaction name="actionSorting_Descending"/>
+   </widget>
+   <widget class="QMenu" name="menuShape">
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="title">
+     <string>Shape</string>
+    </property>
+    <addaction name="actionLine"/>
+    <addaction name="actionRectangle"/>
+    <addaction name="actionCircle"/>
+    <addaction name="actionTriangle"/>
+   </widget>
+   <widget class="QMenu" name="menuFormat">
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <italic>true</italic>
+     </font>
+    </property>
+    <property name="title">
+     <string>Format</string>
+    </property>
+    <addaction name="actionLine_color"/>
+    <addaction name="actionShape_color"/>
+    <addaction name="separator"/>
+    <addaction name="actionLine_Style_1"/>
+    <addaction name="actionLine_Style_2"/>
+    <addaction name="actionLine_Style_3"/>
+    <addaction name="separator"/>
+    <addaction name="actionSolid"/>
+    <addaction name="actionNO_Brush"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuhjda"/>
-   <addaction name="menuColor"/>
-   <addaction name="actStyle"/>
+   <addaction name="menuShape"/>
+   <addaction name="menuFormat"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar_2">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="tabletTracking">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar_2</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/icon/icon/back1.jpg);</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSearch"/>
+   <addaction name="actionDelete"/>
+   <addaction name="actionSorting_Ascending"/>
+   <addaction name="actionSorting_Descending"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar_3">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="tabletTracking">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar_3</string>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/icon/icon/back1.jpg);</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionUndo"/>
+   <addaction name="actionRedo"/>
+   <addaction name="actionLine"/>
+   <addaction name="actionTriangle"/>
+   <addaction name="actionRectangle"/>
+   <addaction name="actionCircle"/>
+   <addaction name="actionShape_color"/>
+   <addaction name="actionLine_color"/>
+   <addaction name="actionLine_Style_1"/>
+   <addaction name="actionLine_Style_2"/>
+   <addaction name="actionLine_Style_3"/>
+   <addaction name="actionSolid"/>
+   <addaction name="actionNO_Brush"/>
+  </widget>
   <action name="actShapes_Line">
    <property name="text">
     <string>Line</string>
@@ -275,6 +418,11 @@
   <action name="actUndo">
    <property name="text">
     <string>Undo</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
    </property>
    <property name="shortcut">
     <string>Ctrl+Z</string>
@@ -331,7 +479,207 @@
     <string>No Brush</string>
    </property>
   </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/Undo-icon.png</normaloff>:/icon/icon/Undo-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/Redo-icon.png</normaloff>:/icon/icon/Redo-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actionLine">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/Editing-Line-icon.png</normaloff>:/icon/icon/Editing-Line-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Line</string>
+   </property>
+  </action>
+  <action name="actionRectangle">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/rectangle1.png</normaloff>:/icon/icon/rectangle1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rectangle</string>
+   </property>
+  </action>
+  <action name="actionCircle">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/circle1.png</normaloff>:/icon/icon/circle1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Circle</string>
+   </property>
+  </action>
+  <action name="actionTriangle">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/Sport-triangle-icon.png</normaloff>:/icon/icon/Sport-triangle-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Triangle</string>
+   </property>
+  </action>
+  <action name="actionLine_Width">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/Editing-Line-Width-icon - Copy.png</normaloff>:/icon/icon/Editing-Line-Width-icon - Copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Line Width</string>
+   </property>
+  </action>
+  <action name="actionLine_color">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/line color.jpg</normaloff>:/icon/icon/line color.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Line color</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/open.jpg</normaloff>:/icon/icon/open.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/save.png</normaloff>:/icon/icon/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionLine_Style_1">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/dense1.jpeg</normaloff>:/icon/icon/dense1.jpeg</iconset>
+   </property>
+   <property name="text">
+    <string>Line Style 1</string>
+   </property>
+  </action>
+  <action name="actionLine_Style_2">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/dense2.jpeg</normaloff>:/icon/icon/dense2.jpeg</iconset>
+   </property>
+   <property name="text">
+    <string>Line Style 2</string>
+   </property>
+  </action>
+  <action name="actionLine_Style_3">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/dense3.jpeg</normaloff>:/icon/icon/dense3.jpeg</iconset>
+   </property>
+   <property name="text">
+    <string>Line Style 3</string>
+   </property>
+  </action>
+  <action name="actionSolid">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/solid.png</normaloff>:/icon/icon/solid.png</iconset>
+   </property>
+   <property name="text">
+    <string>Solid</string>
+   </property>
+  </action>
+  <action name="actionNO_Brush">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/no brush.png</normaloff>:/icon/icon/no brush.png</iconset>
+   </property>
+   <property name="text">
+    <string>NO Brush</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/Button-Delete-icon.png</normaloff>:/icon/icon/Button-Delete-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionSearch">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/Search-icon.png</normaloff>:/icon/icon/Search-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Search</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionShape_color">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/Actions-fill-color-icon.png</normaloff>:/icon/icon/Actions-fill-color-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Shape color</string>
+   </property>
+  </action>
+  <action name="actionSorting_Ascending">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/Actions-view-sort-descending-icon.png</normaloff>:/icon/icon/Actions-view-sort-descending-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sorting Ascending</string>
+   </property>
+  </action>
+  <action name="actionSorting_Descending">
+   <property name="icon">
+    <iconset resource="icon.qrc">
+     <normaloff>:/icon/icon/Actions-view-sort-ascending-icon.png</normaloff>:/icon/icon/Actions-view-sort-ascending-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sorting Descending</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
  <connections/>
 </ui>

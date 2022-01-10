@@ -4,11 +4,13 @@ Processes::Processes(QVector<Shape*>* shapesMemory)
     this->shapesMemory = shapesMemory;
 }
 
+// adding shapes drawn to a vector (shapesMemory vector)
 void Processes::add(Shape* shape)
 {
     shapesMemory->push_back(shape);
 }
 
+// Function to search any shape using its nae name and return its information.
 Shape* Processes::search(QString shapeName)
 {
    for (int i=0; i<shapesMemory->size();i++){
@@ -21,7 +23,7 @@ Shape* Processes::search(QString shapeName)
 }
 
 
-
+// function to sort shapes ascending drawn according to their perimeter
 void Processes::  sort_Ascending ()
 {
 
@@ -30,6 +32,7 @@ void Processes::  sort_Ascending ()
 
 }
 
+// function to sort shapes descending drawn according to their perimeter
 void Processes:: sort_Descending ()
 {
     std::sort(shapesMemory->begin(), shapesMemory->end(),Check_Des() );

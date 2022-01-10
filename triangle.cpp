@@ -8,7 +8,7 @@ Triangle::Triangle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraph
     triangle->setPen(pen);
     triangle->setBrush(brush);
     shapeType = "Triangle";
-    name=QString("Triangle %1").arg(triangleOrder++);
+    name=QString("Triangle %1").arg(triangleOrder++);//  The Shapename of the Triangle after drawing the Triangle Shape.
 }
 
 
@@ -16,6 +16,8 @@ Triangle:: ~Triangle(){
 
 }
 
+
+//override on SetParemeter function to determine the perimeter of the any Triangle drawn.
 void Triangle::setParemeters(int x2, int y2){
     length=pow((pow((x1-x2),2)+pow((y1-y2),2)),0.5);
     polygon.clear();

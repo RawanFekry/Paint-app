@@ -1,0 +1,57 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>icon/03b500796bb9a06bf47950ab702ee332.png</file>
+        <file>icon/18-186417_paint-splo.png</file>
+        <file>icon/Actions-fill-color-icon.png</file>
+        <file>icon/back.jpg</file>
+        <file>icon/back1.jpg</file>
+        <file>icon/background.jpg</file>
+        <file>icon/Brush-colored-paint-background-vector.jpg</file>
+        <file>icon/circle.jpg</file>
+        <file>icon/color.jpg</file>
+        <file>icon/Compass-icon.png</file>
+        <file>icon/delete.jpg</file>
+        <file>icon/Editing-Line-icon.png</file>
+        <file>icon/Editing-Line-Width-icon - Copy.png</file>
+        <file>icon/Editing-Line-Width-icon.png</file>
+        <file>icon/line color.jpg</file>
+        <file>icon/line width.jpg</file>
+        <file>icon/line.jpg</file>
+        <file>icon/open.jpg</file>
+        <file>icon/rectangle.jpg</file>
+        <file>icon/redo.jpg</file>
+        <file>icon/Redo-icon.png</file>
+        <file>icon/save.jpg</file>
+        <file>icon/save.png</file>
+        <file>icon/search.jpg</file>
+        <file>icon/Search-icon.png</file>
+        <file>icon/shapes.jpg</file>
+        <file>icon/sort asc.jpg</file>
+        <file>icon/sort desc.jpg</file>
+        <file>icon/sort.jpg</file>
+        <file>icon/Sport-triangle-icon.png</file>
+        <file>icon/triangle.jpg</file>
+        <file>icon/undo.jpg</file>
+        <file>icon/Undo-icon.png</file>
+        <file>icon/Wwalczyszyn-Iwindows-Paint.ico</file>
+        <file>icon/circle.png</file>
+        <file>icon/Number-1-icon.png</file>
+        <file>icon/number-2-icon.png</file>
+        <file>icon/number-3-icon.png</file>
+        <file>icon/solid.png</file>
+        <file>icon/number-1-icon (1).png</file>
+        <file>icon/no brush.png</file>
+        <file>icon/Button-Delete-icon.png</file>
+        <file>icon/brush.png</file>
+        <file>icon/Actions-draw-brush-icon.png</file>
+        <file>icon/Paint-icon.png</file>
+        <file>icon/Actions-view-sort-ascending-icon.png</file>
+        <file>icon/Actions-view-sort-descending-icon.png</file>
+        <file>icon/dense1.jpeg</file>
+        <file>icon/dense2.jpeg</file>
+        <file>icon/dense3.jpeg</file>
+        <file>icon/solid.jpeg</file>
+        <file>icon/circle1.png</file>
+        <file>icon/rectangle1.png</file>
+    </qresource>
+</RCC>
