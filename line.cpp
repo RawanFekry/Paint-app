@@ -7,6 +7,8 @@ Line::Line(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsScene
     line->setPen(pen);
     shapeType = "Line";
     name=QString("Line %1").arg(lineOrder++);//  The Shapename of the line after drawing the Line Shape.
+    length = 0;
+    setPerimeter();
 
 }
 

@@ -9,6 +9,8 @@ Circle::Circle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraphicsS
     circ->setBrush(brush);
     shapeType = "Circle";
     name=QString("Circle %1").arg(circleOrder++);//  The Shapename of the circle after drawing the Circle Shape.
+    diameter = 0;
+    setPerimeter();
 }
 
 

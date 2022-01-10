@@ -9,6 +9,9 @@ Rectangle::Rectangle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGra
     rect->setBrush(brush);
     shapeType = "Rectangle";
     name=QString("Rectangle %1").arg(rectOrder++);//  The Shapename of the Rectangle after drawing the Rectangle Shape.
+    width = 0;
+    hieght = 0;
+    setPerimeter();
 }
 
 

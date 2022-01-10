@@ -9,6 +9,8 @@ Triangle::Triangle(int x1,int y1,QColor color,QBrush brush,int linewidth, QGraph
     triangle->setBrush(brush);
     shapeType = "Triangle";
     name=QString("Triangle %1").arg(triangleOrder++);//  The Shapename of the Triangle after drawing the Triangle Shape.
+    length = 0;
+    setPerimeter();
 }
 
 

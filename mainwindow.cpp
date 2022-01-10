@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->resize(1400,900);
-//  this->setFixedSize(1400,1400);
+    this->setFixedSize(1400,1400);
 //    ui->graphicsView->resize(500,500);
 //ui->graphicsView->setFixedSize(500,500);
     undoStack = new QUndoStack(this);

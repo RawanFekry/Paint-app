@@ -91,9 +91,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QSpinBox" name="linewidthSpn">
     <property name="geometry">
      <rect>
-      <x>900</x>
-      <y>180</y>
-      <width>111</width>
+      <x>1010</x>
+      <y>170</y>
+      <width>131</width>
       <height>29</height>
      </rect>
     </property>
@@ -104,9 +104,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="ipLineEdit_Search">
     <property name="geometry">
      <rect>
-      <x>1160</x>
+      <x>1140</x>
       <y>30</y>
-      <width>111</width>
+      <width>131</width>
       <height>28</height>
      </rect>
     </property>
@@ -120,9 +120,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QTextBrowser" name="opLineEdit">
     <property name="geometry">
      <rect>
-      <x>900</x>
+      <x>880</x>
       <y>20</y>
-      <width>211</width>
+      <width>231</width>
       <height>141</height>
      </rect>
     </property>
@@ -136,9 +136,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QLineEdit" name="ipLineEdit_Delete">
     <property name="geometry">
      <rect>
-      <x>1160</x>
+      <x>1140</x>
       <y>90</y>
-      <width>113</width>
+      <width>131</width>
       <height>28</height>
      </rect>
     </property>
@@ -152,10 +152,10 @@ p, li { white-space: pre-wrap; }
    <widget class="QTableWidget" name="tblwdgShape">
     <property name="geometry">
      <rect>
-      <x>900</x>
+      <x>880</x>
       <y>220</y>
-      <width>351</width>
-      <height>191</height>
+      <width>421</width>
+      <height>381</height>
      </rect>
     </property>
     <property name="font">
@@ -202,17 +202,20 @@ p, li { white-space: pre-wrap; }
 </string>
     </property>
    </widget>
-   <widget class="QWidget" name="widget" native="true">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>420</y>
-      <width>251</width>
-      <height>251</height>
+      <x>880</x>
+      <y>180</y>
+      <width>111</width>
+      <height>20</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-image: url(:/icon/icon/Wwalczyszyn-Iwindows-Paint.ico);</string>
+    <property name="text">
+     <string>Line Width</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
     </property>
    </widget>
    <zorder>graphicsView_2</zorder>
@@ -223,7 +226,7 @@ p, li { white-space: pre-wrap; }
    <zorder>ipLineEdit_Delete</zorder>
    <zorder>tblwdgShape</zorder>
    <zorder>deleErrorMesg</zorder>
-   <zorder>widget</zorder>
+   <zorder>label</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -231,7 +234,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>1365</width>
-     <height>27</height>
+     <height>32</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -244,8 +247,6 @@ p, li { white-space: pre-wrap; }
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionOpen"/>
-    <addaction name="actionSave"/>
     <addaction name="actionUndo"/>
     <addaction name="actionRedo"/>
     <addaction name="actionSorting_Ascending"/>
@@ -292,7 +293,7 @@ p, li { white-space: pre-wrap; }
   </widget>
   <widget class="QToolBar" name="toolBar_2">
    <property name="sizePolicy">
-    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
