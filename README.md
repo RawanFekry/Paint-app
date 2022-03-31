@@ -1,5 +1,6 @@
 # Project description
--   This file is made to illustrate our project architecture, we have made several classes which we will illustrate further.
+-   Painter Project implemented using Qt and C++.
+-  Projects Parts
     -   AT first, the shape class which has the attributes of all the drawn shapes.
     -   The Shape class inherit to the Circle, Line, Rectangle, and Triangle Classes with its attributes.
         -   The Circle class has the attributes and functions of the Circle Shape which will be drawn further.
